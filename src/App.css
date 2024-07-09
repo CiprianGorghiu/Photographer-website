@@ -1,18 +1,18 @@
+/* Stiluri generale pentru întreaga aplicație */
 .App {
   text-align: center;
+  font-family: Arial, sans-serif; /* Exemplu de font folosit */
+  background-color: #f0f0f0; /* Fundal general */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
+/* Stiluri pentru animația de spin a logo-ului */
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  .orange-bg {
+    animation: App-logo-spin 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
 }
 
+/* Stiluri pentru antet (header-ul aplicației) */
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -24,15 +24,137 @@
   color: white;
 }
 
+/* Stiluri pentru link-urile din antet (poți adapta pentru link-uri specificate) */
 .App-link {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Stiluri pentru secțiunea "home" */
+#home {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  background-color: #282c34;
+}
+
+/* Stiluri pentru secțiunea "portofoliu" */
+#portofoliu {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  background-color: #282c34;
+}
+
+/* Stiluri pentru secțiunea "rezerva" */
+#rezerva {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  background-color: #282c34;
+}
+
+/* Stiluri pentru carduri */
+.cards {
+  display: flex;
+  flex-wrap: wrap; /* Permite cardurilor să se așeze pe mai multe rânduri */
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.card {
+  width: 300px; /* Lățimea cardului pe ecrane mari */
+  height: 300px;
+  margin: 10px;
+  background-color: #00000049;
+  padding: 30px;
+  border-radius: 10px;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.3s ease;
+}
+
+.card:hover {
+  background-color: #f59e09;
+  cursor: pointer;
+}
+
+.card h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.card p {
+  margin-bottom: 0;
+}
+
+.card-corner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  background-color: #f59e09;
+  transform: translateX(50%) translateY(-50%) rotate(45deg);
+  transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
+  z-index: 1;
+}
+
+.card:hover .card-corner {
+  transform: translateX(0) translateY(1) rotate(45deg);
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* Stiluri pentru butonul "Detalii" */
+.btn-details {
+  width: 200px;
+  height: 30px;
+  margin-top: 10px;
+  font-size: large;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 20px;
+  background-color: rgb(153, 150, 150);
+  border: none;
+}
+
+.btn-details:hover {
+  color: white;
+  cursor: pointer;
+  background-color: #000000;
+}
+
+/* Media queries pentru ecrane mici (max-width: 768px) */
+@media (max-width: 768px) {
+  .App-header {
+    min-height: initial; /* Anulează înălțimea minimă pentru a permite scroll pe ecrane mici */
   }
-  to {
-    transform: rotate(360deg);
+
+  .cards {
+    flex-direction: column; /* Așază cardurile vertical pe ecrane mici */
+    align-items: center;
+  }
+
+  .card {
+    width: 80%; /* Lățimea cardului pe ecrane mici */
+    max-width: 300px; /* Limitarea la 300px pentru a menține aspect proporțional */
+  }
+
+  .btn-details {
+    width: 100%; /* Lățime maximă pentru butonul "Detalii" */
   }
 }

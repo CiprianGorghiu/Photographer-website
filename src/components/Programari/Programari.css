@@ -1,0 +1,144 @@
+#rezerva {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  background-color: #282c34;
+}
+
+.programari {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+  width: 60vh;
+  max-width: 90%;
+  background: rgba(255, 255, 255, 0.31);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5.9px);
+  border: 1px solid #e4e4e4;
+  height: 70vh;
+  max-height: 90%;
+  padding: 20px;
+}
+
+.programari h2 {
+  margin-top: 20px;
+  color: black;
+}
+
+.programari-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.programari-form input,
+.programari-form textarea {
+  margin: 10px;
+  padding: 10px;
+  width: 100%;
+  max-width: 300px;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.programari-form textarea {
+  height: 100px;
+}
+
+.programari-form button {
+  width: 100%;
+  max-width: 300px;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease;
+}
+
+.programari-form button:hover {
+  background-color: #45a049;
+}
+
+.animated-text-gradient {
+  background: linear-gradient(to right, #7953cd 20%, #00affa 30%, #0190cd 70%, #764ada 80%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  background-size: 500% auto;
+  animation: textShine 5s ease-in-out infinite alternate;
+}
+
+@keyframes textShine {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.animated-text-gradient i {
+  font-size: 50px;
+}
+
+.contact-icons{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+}
+.contact-icons i {
+  font-size: 30px;
+  margin: 10px;
+}
+.contact-icons a{
+  text-decoration: none;
+  color: white;
+}
+.contact-icons i:hover {
+  color: #f59e09;
+}
+
+@media (max-width: 1024px) {
+  .programari {
+    width: 90%;
+    max-width: none;
+    height: auto;
+    padding: 10px;
+    margin-top: 30px;
+  }
+
+  .programari-form input {
+    width: 80%;
+    max-width: none;
+  }
+
+  .programari-form textarea {
+    max-width: none;
+    width: 80%;
+    height: 20vh; 
+  }
+
+  .programari-form button {
+    width: 80%;
+    max-width: none;
+  }
+}
